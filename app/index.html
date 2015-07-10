@@ -108,30 +108,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="all">
               <paper-material elevation="1">
-                <todo-list todos="{{todos}}">
-                </todo-list>
+                <todo-list todos="{{todos}}"></todo-list>
               </paper-material>
 
               <paper-material elevation="1">
-                <todo-input on-add-todo="addTodo"
-                            on-reset-todos="reset">
-                </todo-input>
+                <paper-input id="todoInput"></paper-input>
+                <paper-button raised on-tap="addTodo">Add Todo</paper-button>
+                <paper-button raised on-tap="clearTodos">Clear Todos</paper-button>
               </paper-material>
             </section>
 
             <section data-route="active">
               <paper-material elevation="1">
-                <todo-list todos="{{todos}}"
-                           filter-by="active">
-                </todo-list>
+                // TODO: Implement filtered lists!
               </paper-material>
             </section>
 
             <section data-route="completed">
               <paper-material elevation="1">
-                <todo-list todos="{{todos}}"
-                           filter-by="completed">
-                </todo-list>
+                // TODO: Implement filtered lists!
               </paper-material>
             </section>
 
@@ -153,11 +148,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          precache-file="precache.json">
       </platinum-sw-cache>
     </platinum-sw-register>
-
-    <iron-localstorage id="localStorage"
-                       name="starter-kit-todo"
-                       value="{{todos}}">
-    </iron-localstorage>
 
   </template>
 

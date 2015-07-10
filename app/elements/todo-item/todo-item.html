@@ -16,11 +16,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: block;
     }
-    paper-checkbox[checked] ::content span {
-      font-style: italic;
-      opacity: 0.5;
-      text-decoration: line-through;
-    }
   </style>
   <template>
     <paper-checkbox checked="{{completed}}">
@@ -34,12 +29,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         completed: {
           type: Boolean,
           value: false,
-          notify: true,
-          observer: '_handleChange'
+          notify: true
         }
-      },
-      _handleChange: function() {
-        this.fire('todo-item-changed');
       }
     });
   </script>

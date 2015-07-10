@@ -24,19 +24,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
 
-    this.todos = this.todos || [
-      {
-        title: 'Write Net Mag article',
-        isComplete: false
-      },
-      {
-        title: 'Work on next Polycast',
-        isComplete: true
-      },
-      {
-        title: 'Do some jumping jacks',
-        isComplete: false
-      }
+    this.todos = [
+      {title: 'Buy some milk', isComplete: false},
+      {title: 'Take out trash', isComplete: true},
+      {title: 'Walk the dog', isComplete: false}
     ];
   });
 
@@ -53,14 +44,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   };
 
-  app.addTodo = function(e, detail) {
+  app.addTodo = function() {
     this.push('todos', {
-      title: detail.value,
+      title: this.$.todoInput.value,
       isComplete: false
     });
+    this.$.todoInput.value = null;
   };
 
-  app.reset = function() {
+  app.clearTodos = function() {
     this.todos = [];
   };
 
