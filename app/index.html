@@ -113,9 +113,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
 
               <paper-material elevation="1">
-                <todo-input on-add-todo="addTodo"
-                            on-reset-todos="reset">
-                </todo-input>
+                <paper-input id="todoInput" label="Enter a todo"></paper-input>
+                <paper-button raised on-tap="addTodo">Add Todo</paper-button>
+                <paper-button raised on-tap="resetTodos">Clear All</paper-button>
               </paper-material>
             </section>
 
@@ -153,11 +153,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          precache-file="precache.json">
       </platinum-sw-cache>
     </platinum-sw-register>
-
-    <iron-localstorage id="localStorage"
-                       name="starter-kit-todo"
-                       value="{{todos}}">
-    </iron-localstorage>
 
   </template>
 

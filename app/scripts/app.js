@@ -53,14 +53,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   };
 
-  app.addTodo = function(e, detail) {
+  app.addTodo = function() {
+    // Use automatic node finding to get the value from
+    // the input field
     this.push('todos', {
-      title: detail.value,
+      title: this.$.todoInput.value,
       isComplete: false
     });
+    // Reset the input field
+    this.$.todoInput.value = null;
   };
 
-  app.reset = function() {
+  app.resetTodos = function() {
     this.todos = [];
   };
 
