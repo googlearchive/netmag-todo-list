@@ -19,6 +19,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
   <template>
     <paper-checkbox checked="{{completed}}">
+      <!-- Unfortunately this causes an accessibility bug :( -->
+      <!-- https://github.com/PolymerElements/paper-checkbox/issues/32 -->
       <content></content>
     </paper-checkbox>
   </template>
